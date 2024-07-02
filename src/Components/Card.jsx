@@ -7,6 +7,7 @@ export default function Card({ key_, task_name, task_date, data_pass, update }) 
     const newData = [...data_pass];
     // Remove the item at index key_
     newData.splice(key_, 1);
+    localStorage.setItem("data",JSON.stringify(newData))
     console.log(newData); // Check the updated array in console
     // Update state with the new array
     update(newData);

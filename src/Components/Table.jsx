@@ -7,7 +7,7 @@ export default function Table({data_pass,update}) {
 
   function handleadd() {
     const newData = [...data_pass,...[{task_name:task,task_date:date}]];
-    console.log(newData);
+    localStorage.setItem("data",JSON.stringify([...newData]))
     update(newData);
     setTask("")
     setDate("")
