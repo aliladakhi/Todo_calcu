@@ -14,13 +14,13 @@ export default function Card({ key_, task_name, task_date, data_pass, update }) 
 
   return (
     <div className="row mt-3">
-      <div className="col-5">
+      <div className="col-5 d-flex ">
         <div className="text-center flex-nowrap">
           <p>{todoName}</p>
         </div>
       </div>
 
-      <div className="col-4">
+      <div className="col-4 d-flex">
         <div className="text-center flex-nowrap">{todoDate}</div>
       </div>
 
