@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MdOutlineAutoDelete } from "react-icons/md";
-import TaskContext from "../../Context/Task";
+import TaskContext from "../../Context/TaskContext";
 
 export default function Card({ key_, task_name, task_date }) {
   let todoName = task_name;

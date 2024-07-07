@@ -1,5 +1,5 @@
 import {useState } from "react"
-import TaskContext from "./Task";
+import TaskContext from "./TaskContext";
 
 export default function TaskProvider({ children }) {
 

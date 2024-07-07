@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import style from "./Clear.module.css";
-import TaskContext from "../../Context/Task";
+import TaskContext from "../../Context/TaskContext";
 
 export default function Clear() {
   const { clearTask } = useContext(TaskContext);

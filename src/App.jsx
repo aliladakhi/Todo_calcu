@@ -1,6 +1,6 @@
 import Calcu from "./Components/Calcu/Calcu";
 import Todo  from "./Components/Todo/Todo";
-import  TaskProvider  from "./Context/Provider";
+import  TaskProvider  from "./Context/TaskProvider";
 function App() {
   return (
     <>
