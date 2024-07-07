@@ -1,7 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { MdAddBox } from "react-icons/md";
+import TaskContext from "../../Context/Task";
 
-export default function Table({ data_pass, update }) {
+export default function Table() {
+
+  const {addTask}=useContext(TaskContext)
+
   const taskNameRef = useRef(null);
   const taskDateRef = useRef(null);
 
@@ -9,20 +13,10 @@ export default function Table({ data_pass, update }) {
     event.preventDefault();
     const taskName = taskNameRef.current.value;
     const taskDate = taskDateRef.current.value;
-
     if (taskName.length === 0 || taskDate.length === 0) {
       return;
     }
-
-    update((prevDataPass) => {
-      const newData = [
-        ...prevDataPass,
-        { task_name: taskName, task_date: taskDate },
-      ];
-      localStorage.setItem("data", JSON.stringify(newData));
-      return newData;
-    });
-
+    addTask({ task_name: taskName, task_date: taskDate }) 
     taskNameRef.current.value = "";
     taskDateRef.current.value = "";
   };

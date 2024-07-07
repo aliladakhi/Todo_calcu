@@ -1,20 +1,22 @@
-import { useContext } from "react"
-import style from "./Clear.module.css"
+import { useContext } from "react";
+import style from "./Clear.module.css";
+import TaskContext from "../../Context/Task";
 
-export default function Clear({update}){
-  function handleOnClick(){
-    let newData=[]
-    update(newData)
-    localStorage.clear()
+export default function Clear() {
+  const { clearTask } = useContext(TaskContext);
+  function handleOnClick() {
+    clearTask();
   }
 
-  return(
+  return (
     <>
-
-    <button type="button" onClick={handleOnClick} className={`${style["cls-btn"]}`}>
-      Reset
-    </button>
-
+      <button
+        type="button"
+        onClick={handleOnClick}
+        className={`${style["cls-btn"]}`}
+      >
+        Reset
+      </button>
     </>
   );
 }
