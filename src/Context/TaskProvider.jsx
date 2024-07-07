@@ -1,43 +1,43 @@
-import {useState } from "react"
+import { useReducer } from "react";
 import TaskContext from "./TaskContext";
+import dataReducer from "./Reducer";
+
 
 export default function TaskProvider({ children }) {
 
-  // State to hold data
-  const [data, setData] = useState(JSON.parse(localStorage.getItem("data")) || []);
-  console.log(data)
-// Function to update data and persist in localStorage
+  
+  const [redData, redDispatch] = useReducer(
+    dataReducer,
+    JSON.parse(localStorage.getItem("data")) || []
+  );
 
+  function addTask(newTask) {
+    const newTaskAction = {
+      type: "ADD_TASK",
+      payload: { ...newTask },
+    };
+    redDispatch(newTaskAction);
+  }
 
-function deleteTask(key_){
-  setData((currData)=>{
-    const newData = [...data];
-    newData.splice(key_, 1);
-    localStorage.setItem("data",JSON.stringify(newData))     
-    return newData
-  })
+  function deleteTask(key_) {
+    const newTaskAction = {
+      type: "DEL_TASK",
+      payload: key_,
+    };
+    redDispatch(newTaskAction);
+  }
 
-}
+  function clearTask() {
+    const newTaskAction = {
+      type: "CLEAR_TASK",
+      payload: [],
+    };
+    redDispatch(newTaskAction);
+  }
 
-function addTask(newTask){
-  setData((currData)=>{
-    let newData=[...data,newTask]
-    localStorage.setItem("data", JSON.stringify(newData));
-    return newData
-  });
-}
-
-function clearTask(){
-  setData((currData)=>{
-    let newData=[]
-    localStorage.setItem("data", JSON.stringify(newData));
-    return newData
-  })
-}
-
-return (
-  <TaskContext.Provider value={{ data , deleteTask,addTask,clearTask}}>
-    {children}
-  </TaskContext.Provider>
-);
+  return (
+    <TaskContext.Provider value={{ data: redData, deleteTask, addTask, clearTask }}>
+      {children}
+    </TaskContext.Provider>
+  );
 }
