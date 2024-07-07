@@ -1,3 +1,4 @@
+import { useContext } from "react"
 import style from "./Clear.module.css"
 
 export default function Clear({update}){
@@ -9,9 +10,11 @@ export default function Clear({update}){
 
   return(
     <>
+
     <button type="button" onClick={handleOnClick} className={`${style["cls-btn"]}`}>
       Reset
     </button>
+
     </>
   );
 }
