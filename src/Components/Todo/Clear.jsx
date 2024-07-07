@@ -1,5 +1,6 @@
-export default function Clear({update}){
+import style from "./Clear.module.css"
 
+export default function Clear({update}){
   function handleOnClick(){
     let newData=[]
     update(newData)
@@ -8,7 +9,7 @@ export default function Clear({update}){
 
   return(
     <>
-    <button type="button" onClick={handleOnClick} className=" cls-btn">
+    <button type="button" onClick={handleOnClick} className={`${style["cls-btn"]}`}>
       Reset
     </button>
     </>

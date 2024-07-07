@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 export default function Table({data_pass,update}) {
   const [task,setTask]=useState("")
   const [date,setDate]=useState("")
@@ -19,6 +18,14 @@ export default function Table({data_pass,update}) {
   function dateEntry(e){
     setDate(e.target.value)
   }
+
+  function handleEnter(event){
+    if(event.key=="Enter" && !(task.length==0 || date.length==0 )){
+      
+      handleadd()
+    }
+  }
+
   return (
       <div className="row my-3">
         <div className="col-5">
@@ -31,6 +38,7 @@ export default function Table({data_pass,update}) {
               placeholder="Enter Todo Here"
               aria-label="Todo-name"
               aria-describedby="addon-wrapping"
+              onKeyDown={handleEnter}
             />
           </div>
         </div>
@@ -45,6 +53,7 @@ export default function Table({data_pass,update}) {
               placeholder="Enter Todo Here"
               aria-label="Todo-name"
               aria-describedby="addon-wrapping"
+              onKeyDown={handleEnter}
             />
           </div>
         </div>

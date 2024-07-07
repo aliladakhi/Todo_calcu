@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.cls-btn{
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding-inline: 15px;
+  padding-block: 5px;
+}
+.cls-btn:hover{
+  opacity: .9;
+  background-color: red;
+}

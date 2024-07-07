@@ -29,6 +29,7 @@ export default function Card({ key_, task_name, task_date, data_pass, update }) 
         <button onClick={handleDelete} type="button" className="btn btn-danger container">
           Delete
         </button>
+        
       </div>
     </div>
   );
