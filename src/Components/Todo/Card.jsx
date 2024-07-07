@@ -1,3 +1,5 @@
+import { MdOutlineAutoDelete } from "react-icons/md";
+
 export default function Card({ key_, task_name, task_date, data_pass, update }) {
   let todoName = task_name;
   let todoDate = task_date;
@@ -27,7 +29,7 @@ export default function Card({ key_, task_name, task_date, data_pass, update }) 
 
       <div className="col-3">
         <button onClick={handleDelete} type="button" className="btn btn-danger container">
-          Delete
+        <MdOutlineAutoDelete />
         </button>
         
       </div>

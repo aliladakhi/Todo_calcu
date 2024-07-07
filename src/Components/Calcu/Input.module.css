@@ -1,0 +1,8 @@
+.expr{
+  padding-inline: 7px;
+  padding-block: 5px;
+  border-radius: 7px;
+  border: 1.6px rgb(137, 137, 137) solid;
+  font-weight: bold;
+  overflow:scroll;
+}

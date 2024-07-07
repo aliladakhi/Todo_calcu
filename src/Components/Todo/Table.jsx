@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { MdAddBox } from "react-icons/md";
 export default function Table({data_pass,update}) {
   const [task,setTask]=useState("")
   const [date,setDate]=useState("")
@@ -59,7 +59,7 @@ export default function Table({data_pass,update}) {
         </div>
         <div className="col-3 ">
           <button type="button" onClick={handleadd} className="btn btn-success container " disabled={task.length==0 || date.length==0}>
-            Add
+          <MdAddBox />
           </button>
         </div>
       </div>

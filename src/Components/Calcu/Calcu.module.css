@@ -1,0 +1,24 @@
+.message p{
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  height: 50px;
+  width: 100%;
+
+}
+
+.container{
+  width: 200px;
+  padding-top: 20px;
+  margin: auto;
+}
+
+.btns{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+}
